@@ -1,0 +1,22 @@
+.demo{
+    color: blanchedalmond;
+   
+}
+
+.input{
+    width: 1000px;
+    height: 50px;
+}
+
+.demo1{
+    color: blanchedalmond;
+    /* background-color: black; */
+}
+
+.modal.show{
+    display: block;
+}
+
+.txt{
+    color: black;
+}

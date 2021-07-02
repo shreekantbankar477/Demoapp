@@ -1,0 +1,187 @@
+<header>
+    <!-- header inner -->
+    <div class="header-top">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <!-- <a href="index.html"><img src="assets/images/logo.png" alt="#" /></a> -->
+                    <h2 class="demo">DemoApp</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-9">
+              
+               <div class="menu-area">
+                <div class="limit-box">
+                  <nav class="main-menu ">
+                    <ul class="menu-area-main">
+                      <li class=""> <a href="index.html">Home</a> </li>
+                  
+                    
+                      <li> <a href="concerts.html">job </a> </li>
+                      <li> <a href="gallery.html">clients</a> </li>
+                      <li> <a href="contact.html">Contact</a> </li>
+      
+                        
+                      
+                     </ul>
+                   </nav>
+                
+               </div> 
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- end header inner -->
+
+     <!-- end header -->
+     <section class="slider_section">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="text-bg">
+                      <!-- <span>The Best</span> -->
+                      
+                      <label class="demo1" style="font-weight: bold;">I'm looking For...</label>
+                      <br>
+                      <input type="text" placeholder="Enter a job description">  <br><br>
+                      <button type="submit" class="btn btn-warning" (click)="showModal=true" data-toggle="modal" data-target="#exampleModal">
+                        Register
+                      </button>
+                      &nbsp;
+
+                      <button type="submit" class="btn btn-warning" (click)="showuser=true"  data-toggle="modal1" data-target="#exampleModal1">
+                        Login User
+                      </button>
+                 
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+   
+
+
+         
+        </div>
+     
+  
+   </div>
+    
+  
+
+</section>
+<div class="modal fade" id="exampleModal" [ngClass]="{show:showModal}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title txt" id="exampleModalLabel">Registration</h5>
+        <button type="button" class="close" (click)="showModal=false" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="registerform">
+          <ul>
+            <li>Name</li>
+            <li><input type="text" class="form-control" formControlName="Name"></li>
+            <li>Number</li>
+            <li><input type="text" class="form-control" formControlName="number"></li>
+
+            <li>Email</li>
+            <li><input type="text" class="form-control" formControlName="email"></li>
+
+            <li>Age</li>
+            <li><input type="text" class="form-control" formControlName="age"></li>
+
+            <li>State</li>
+            <li><input type="text" class="form-control" formControlName="state"></li>
+
+            <li>Country</li>
+            <li><input type="text" class="form-control" formControlName="country"></li>
+
+            <li>Address</li>
+            <li><input type="text" class="form-control" formControlName="add"></li>
+
+            <li>Hobbies</li>
+            <li><input type="text" class="form-control" formControlName="hobb"></li>
+            
+          </ul>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" (click)="submit()" class="btn btn-warning" (click)="showModal=false">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" [ngClass]="{show:showuser}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title txt" id="exampleModalLabel">User Details </h5>
+        <button type="button" class="close" (click)="showuser=false" data-dismiss="modal1" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- {{apidata}} -->
+
+        <div *ngFor="let ans of apidata">
+         
+
+          <p>I'm <b style="font-weight: bold;">{{ans.Name}}</b> and im Above <b style="font-weight: bold;">{{ans.age}}</b> and you can send your email to <b style="font-weight: bold;">{{ans.email}}.</b></p>
+          <p>I live in the <b style="font-weight: bold;"></b>{{ans.state}}. I like to play <b style="font-weight: bold;">{{ans.hobb}}</b>.And please send me newsletters.</p>
+          <p>Please reach out to me on my phone number <b style="font-weight: bold;">{{ans.number}}</b>.</p>
+          
+
+        </div>
+        
+        
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button"  class="btn btn-warning" (click)="showuser=false">Edit Changes</button> &nbsp;
+        <button type="button"  class="btn btn-warning" (click)="showuser=false">Edit Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- user detail -->
+
+
+
+
+
+<!-- user detail -->
+</div>
+</header>
+
+
+
